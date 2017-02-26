@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title= title
+     link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    block content
+  
+       -for (var id in items)
+        - var item = items[id]
+          .col-md-3.col-sm-3.col-xs-12
+                .product
+                  figure.touching.effect-bubba
+                    .product-img
+                      img.img-responsive(src=item.image_url)
+                      .option
+                        a.fa.fa-search.shopping-cart(href='/viewDetail?itemid='+item.id)
+                      figcaption.item-description
+                  .product-info
+                    .product-title
+                      h4
+                        a(href='#') #{item.location.display_address}
+                      span.rating
+                        img(src=item.rating_img_url_large)
+                    

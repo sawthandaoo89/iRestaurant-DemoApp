@@ -1,0 +1,38 @@
+include layout
+    section.content
+      .container
+        .row
+          .col-md-8
+            .sidebar
+              .widget.widget_search
+                 .site-search-area
+                    form#site-searchform(method='get', action='#')
+                      .col-lg-12
+                        .col-lg-6
+                            input#country.input-text(name='country', placeholder='Enter Location...', type='text',value = selectedCountry)
+          
+                        .col-lg-6
+                            input#s.input-text(name='key', placeholder='Enter Search keywords...', type='text',value = key)
+                            input#searchsubmit(value='Search', type='submit')
+                        
+          .col-lg-4
+              ul.pagination.pull-right
+                            li
+                              a(href='#') «
+                            li.active
+                              a(href='#') 1
+                            li
+                              a(href='#') 2
+                            li
+                              a(href='#') 3
+                            li
+                              a(href='#') 4
+                            li
+                              a(href='#') »
+        .row
+         .col-md-12
+          include result
+           
+          
+    include footer
+
